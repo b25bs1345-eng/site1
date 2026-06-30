@@ -169,7 +169,7 @@ window.addEventListener("scroll", updateActiveNavigation);
 updateActiveNavigation();
 
 /* ==========================================================
-   BOOKING FORM VALIDATION
+   BOOKING FORM - WHATSAPP INTEGRATION
 ========================================================== */
 
 const bookingForm = document.querySelector(".booking form");
@@ -179,9 +179,12 @@ if (bookingForm) {
     bookingForm.addEventListener("submit", function (event) {
 
         const checkIn = document.getElementById("checkin");
-
         const checkOut = document.getElementById("checkout");
+        const roomCount = document.getElementById("room-count");
+        const adults = document.getElementById("adults");
+        const children = document.getElementById("children");
 
+        // Validation
         if (!checkIn.value || !checkOut.value) {
 
             event.preventDefault();
@@ -193,7 +196,6 @@ if (bookingForm) {
         }
 
         const checkInDate = new Date(checkIn.value);
-
         const checkOutDate = new Date(checkOut.value);
 
         if (checkOutDate <= checkInDate) {
@@ -205,6 +207,27 @@ if (bookingForm) {
             return;
 
         }
+
+        // Prevent form submission and open WhatsApp instead
+        event.preventDefault();
+
+        // Format dates for display
+        const checkInFormatted = new Date(checkIn.value).toLocaleDateString('en-IN');
+        const checkOutFormatted = new Date(checkOut.value).toLocaleDateString('en-IN');
+
+        // Create WhatsApp message with booking details
+        const message = `Hello Udita Homestay! 🏠\n\nI would like to book a room with the following details:\n\n✓ Check-In: ${checkInFormatted}\n✓ Check-Out: ${checkOutFormatted}\n✓ Number of Rooms: ${roomCount.value}\n✓ Adults: ${adults.value}\n✓ Children: ${children.value}\n\nPlease confirm availability and send me the pricing details. Thank you!`;
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // WhatsApp phone number (with country code +91 for India)
+        const phoneNumber = "913369029448";
+
+        // Open WhatsApp with pre-filled message
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappUrl, "_blank");
 
     });
 
