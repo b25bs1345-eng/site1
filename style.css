@@ -96,7 +96,7 @@ section{
 }
 
 /* ==========================
-   HEADER
+   HEADER - SIMPLIFIED
 ========================== */
 
 header{
@@ -109,7 +109,7 @@ header{
     padding:18px 8%;
 
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
 
     backdrop-filter:blur(20px);
@@ -121,54 +121,11 @@ header{
 
 }
 
-.logo{
+header .btn{
 
-    font-size:34px;
-    font-family:'Playfair Display',serif;
-    font-weight:700;
-    color:var(--secondary);
-
-}
-
-nav{
-
-    display:flex;
-    gap:34px;
-
-}
-
-nav a{
-
-    color:var(--text);
-    font-weight:500;
-    position:relative;
-
-}
-
-nav a::after{
-
-    content:'';
-    position:absolute;
-    width:0;
-    height:2px;
-    background:var(--primary);
-    left:0;
-    bottom:-6px;
-    transition:.3s;
-
-}
-
-nav a:hover::after{
-
-    width:100%;
-
-}
-
-/* ACTIVE NAVIGATION LINK STYLE - FIXED */
-nav a.active::after{
-
-    width:100%;
-    background:var(--primary);
+    padding:12px 28px;
+    font-size:15px;
+    font-weight:600;
 
 }
 
@@ -221,6 +178,8 @@ nav a.active::after{
 
     text-align:center;
 
+    margin-top:70px;
+
 }
 
 .hero::before{
@@ -246,7 +205,18 @@ nav a.active::after{
 
 }
 
-.hero h1{
+.hero-logo{
+
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    font-weight:700;
+    color:#D8B36A;
+    margin-bottom:35px;
+    letter-spacing:1px;
+
+}
+
+.hero h2{
 
     font-family:'Playfair Display',serif;
     font-size:72px;
@@ -699,7 +669,7 @@ grid-template-columns:1fr;
 
 }
 
-.hero h1{
+.hero h2{
 
 font-size:54px;
 
@@ -711,19 +681,27 @@ font-size:54px;
 
 header{
 
-padding:18px 5%;
+padding:15px 5%;
 
 }
 
-nav{
+header .btn{
 
-display:none;
+padding:10px 20px;
+font-size:14px;
 
 }
 
-.hero h1{
+.hero h2{
 
 font-size:40px;
+
+}
+
+.hero-logo{
+
+font-size:32px;
+margin-bottom:25px;
 
 }
 
@@ -767,15 +745,28 @@ columns:1;
 
 @media(max-width:480px){
 
-.hero h1{
+.hero h2{
 
 font-size:32px;
+
+}
+
+.hero-logo{
+
+font-size:24px;
+margin-bottom:20px;
 
 }
 
 .btn{
 
 width:100%;
+
+}
+
+header .btn{
+
+width:auto;
 
 }
 
