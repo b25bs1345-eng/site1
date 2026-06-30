@@ -178,42 +178,53 @@ if (bookingForm) {
 
     bookingForm.addEventListener("submit", function (event) {
 
+        event.preventDefault();
+
         const checkIn = document.getElementById("checkin");
         const checkOut = document.getElementById("checkout");
         const roomCount = document.getElementById("room-count");
         const adults = document.getElementById("adults");
         const children = document.getElementById("children");
 
-        // Validation
+        // Get today's date
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Validation 1: Check if both dates are selected
         if (!checkIn.value || !checkOut.value) {
 
-            event.preventDefault();
-
             alert("Please select both Check-In and Check-Out dates.");
-
             return;
 
         }
 
+        // Validation 2: Check if check-in date is not in the past
         const checkInDate = new Date(checkIn.value);
+        checkInDate.setHours(0, 0, 0, 0);
+
+        if (checkInDate < today) {
+
+            alert("Check-In date cannot be in the past. Please select today or a future date.");
+            checkIn.value = "";
+            checkOut.value = "";
+            return;
+
+        }
+
+        // Validation 3: Check if check-out date is after check-in date
         const checkOutDate = new Date(checkOut.value);
+        checkOutDate.setHours(0, 0, 0, 0);
 
         if (checkOutDate <= checkInDate) {
 
-            event.preventDefault();
-
             alert("Check-Out date must be after Check-In date.");
-
             return;
 
         }
 
-        // Prevent form submission and open WhatsApp instead
-        event.preventDefault();
-
         // Format dates for display
-        const checkInFormatted = new Date(checkIn.value).toLocaleDateString('en-IN');
-        const checkOutFormatted = new Date(checkOut.value).toLocaleDateString('en-IN');
+        const checkInFormatted = checkInDate.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+        const checkOutFormatted = checkOutDate.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 
         // Create WhatsApp message with booking details
         const message = `Hello Udita Homestay! 🏠\n\nI would like to book a room with the following details:\n\n✓ Check-In: ${checkInFormatted}\n✓ Check-Out: ${checkOutFormatted}\n✓ Number of Rooms: ${roomCount.value}\n✓ Adults: ${adults.value}\n✓ Children: ${children.value}\n\nPlease confirm availability and send me the pricing details. Thank you!`;
@@ -221,12 +232,13 @@ if (bookingForm) {
         // Encode message for URL
         const encodedMessage = encodeURIComponent(message);
 
-        // WhatsApp phone number (with country code +91 for India)
+        // WhatsApp phone number (with country code +91 for India, no + sign in URL)
         const phoneNumber = "913369029448";
 
-        // Open WhatsApp with pre-filled message
+        // Create WhatsApp URL
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+        // Open WhatsApp in new tab
         window.open(whatsappUrl, "_blank");
 
     });
