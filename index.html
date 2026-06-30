@@ -1,14 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Udita Homestay Prayas | Bolpur, Santiniketan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:#f8f5f0;color:#2b2b2b;line-height:1.6}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);z-index:1000}
+header nav a{text-decoration:none;color:#2b2b2b;margin-left:24px;font-weight:500}
+.btn{background:#b45a3c;color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('assets/images/hero.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px}
+.hero h1{font:700 4rem "Playfair Display",serif}
+.hero p{margin:20px auto;max-width:650px;font-size:1.1rem}
+.booking{max-width:1100px;margin:-70px auto 70px;background:#fff;padding:30px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+input,select{padding:14px;border:1px solid #ddd;border-radius:10px;width:100%}
+button{padding:14px;border:none;border-radius:10px;background:#3e5c4a;color:#fff;font-size:16px;cursor:pointer}
+section{padding:80px 8%}
+h2{font:700 2.4rem "Playfair Display",serif;margin-bottom:18px;color:#3e5c4a}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card div{padding:20px}
+footer{background:#2b2b2b;color:#fff;padding:50px 8%;text-align:center}
+</style>
 </head>
 <body>
 
-<h1>Hello World!</h1>
-<p>This is my first website.</p>
+<header>
+<div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;">Udita Homestay Prayas</div>
+<nav>
+<a href="#rooms">Rooms</a>
+<a href="#gallery">Gallery</a>
+<a href="#kitchen">Kitchen</a>
+<a href="#explore">Explore</a>
+<a href="#contact" class="btn">Book Now</a>
+</nav>
+</header>
 
-<script src="script.js"></script>
+<section class="hero">
+<div>
+<h1>Stay Where Santiniketan Feels Like Home</h1>
+<p>Boutique AC Homestay in Bolpur • 9 Deluxe AC Rooms • Warm Bengali Hospitality • Since 2022</p>
+<a href="#booking" class="btn">Reserve Your Stay</a>
+</div>
+</section>
+
+<div class="booking" id="booking">
+<div class="grid">
+<input type="date">
+<input type="date">
+<select><option>1 Room</option><option>2 Rooms</option><option>3 Rooms</option></select>
+<select><option>2 Adults</option><option>3 Adults</option><option>4 Adults</option></select>
+<select><option>0 Children</option><option>1 Child</option><option>2 Children</option></select>
+<button>CHECK AVAILABILITY</button>
+</div>
+</div>
+
+<section id="rooms">
+<h2>Our Deluxe Rooms</h2>
+<div class="cards">
+<div class="card">
+<img src="assets/images/room1.jpg" alt="">
+<div>
+<h3>AC Deluxe Room</h3>
+<p>Elegant double occupancy rooms with attached bathroom, Wi‑Fi and peaceful surroundings.</p>
+</div>
+</div>
+<div class="card">
+<img src="assets/images/room2.jpg" alt="">
+<div>
+<h3>Comfort & Convenience</h3>
+<p>Ideal for families, couples and travellers exploring Santiniketan.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<p>Your best photographs will appear here in a modern masonry gallery.</p>
+</section>
+
+<section id="kitchen">
+<h2>Prayas Kitchen</h2>
+<p>Freshly prepared Bengali meals, breakfast, lunch, evening snacks and dinner made with care during your stay.</p>
+</section>
+
+<section id="explore">
+<h2>Explore Santiniketan</h2>
+<p>Visit Visva-Bharati, Sonajhuri Haat, Khoai, Amar Kutir and more. We also arrange Toto and Car bookings.</p>
+</section>
+
+<section id="contact">
+<h2>Find Us</h2>
+<p><strong>Check‑in:</strong> 11:00 AM &nbsp; | &nbsp; <strong>Check‑out:</strong> 10:00 AM</p>
+<p>Phone: 033 69029448</p>
+<p><a class="btn" href="https://maps.app.goo.gl/2t5S1m2j2NGip29H9">Open Google Maps</a></p>
+</section>
+
+<footer>
+<h3>Udita Homestay Prayas</h3>
+<p>Experience the warmth of Bengal in the cultural heart of Santiniketan.</p>
+</footer>
+
 </body>
 </html>
