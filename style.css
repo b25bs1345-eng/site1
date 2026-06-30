@@ -304,6 +304,20 @@ nav a:hover::after{
 
 }
 
+.booking label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:var(--secondary);
+
+}
+
 .booking button{
 
     border:none;
