@@ -210,17 +210,19 @@ header .btn{
     font-family:'Playfair Display',serif;
     font-size:48px;
     font-weight:700;
-    color:#D8B36A;
+    color:#3E5A49;
     margin-bottom:35px;
     letter-spacing:1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.3);
 
 }
 
 .hero h2{
 
     font-family:'Playfair Display',serif;
-    font-size:72px;
-    line-height:1.15;
+    font-size:52px;
+    line-height:1.3;
+    font-weight:600;
 
 }
 
@@ -671,7 +673,7 @@ grid-template-columns:1fr;
 
 .hero h2{
 
-font-size:54px;
+font-size:42px;
 
 }
 
@@ -694,13 +696,13 @@ font-size:14px;
 
 .hero h2{
 
-font-size:40px;
+font-size:32px;
 
 }
 
 .hero-logo{
 
-font-size:32px;
+font-size:28px;
 margin-bottom:25px;
 
 }
@@ -747,13 +749,13 @@ columns:1;
 
 .hero h2{
 
-font-size:32px;
+font-size:24px;
 
 }
 
 .hero-logo{
 
-font-size:24px;
+font-size:20px;
 margin-bottom:20px;
 
 }
