@@ -1,6 +1,3 @@
-index.html
-style.css
-script.js
 <!DOCTYPE html>
 <html>
 <head>
