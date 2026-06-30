@@ -164,6 +164,14 @@ nav a:hover::after{
 
 }
 
+/* ACTIVE NAVIGATION LINK STYLE - FIXED */
+nav a.active::after{
+
+    width:100%;
+    background:var(--primary);
+
+}
+
 /* ==========================
    BUTTONS
 ========================== */

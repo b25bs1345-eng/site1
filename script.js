@@ -211,7 +211,7 @@ if (bookingForm) {
 }
 
 /* ==========================================================
-   CURRENT YEAR
+   CURRENT YEAR - FIXED
 ========================================================== */
 
 const yearElement = document.getElementById("current-year");
@@ -221,6 +221,7 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 
 }
+
 /* ==========================================================
    UDITA HOMESTAY
    script.js
