@@ -267,11 +267,17 @@ if (yearElement) {
    IMAGE LAZY LOADING
 ========================================================== */
 
-const images = document.querySelectorAll("img");
+images.forEach(function(image){
 
-images.forEach(function (image) {
+    if(image.classList.contains("hero-fallback")){
 
-    image.setAttribute("loading", "lazy");
+        image.loading="eager";
+
+    }else{
+
+        image.loading="lazy";
+
+    }
 
 });
 
