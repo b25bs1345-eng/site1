@@ -267,6 +267,7 @@ if (yearElement) {
    IMAGE LAZY LOADING
 ========================================================== */
 
+const images = document.querySelectorAll("img");
 images.forEach(function(image){
 
     if(image.classList.contains("hero-fallback")){
