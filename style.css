@@ -299,16 +299,16 @@ header{
 
 }
 
-/* HERO TITLE - improved contrast and size */
+/* HERO TITLE - restored to white for visibility */
 .hero-logo{
     font-family:'Playfair Display',serif;
-    font-size:clamp(2.25rem, 6vw, 5.5rem); /* responsive, bigger */
+    font-size:clamp(2.25rem, 6vw, 5.5rem);
     font-weight:800;
-    color:#1f8f4c; /* a pleasant green - change hex if you prefer another tone */
+    color:#ffffff;
     margin-bottom:28px;
     letter-spacing:0.02em;
     text-shadow:
-      0 6px 20px rgba(0,0,0,0.55); /* strong shadow for readability */
+      0 6px 20px rgba(0,0,0,0.6);
     background:linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.12));
     padding:0.6rem 1.05rem;
     border-radius:10px;
@@ -690,7 +690,7 @@ footer{
 .back-to-top{
     position:fixed;
     right:25px;
-    bottom:170px; /* above .call which is at bottom:100px */
+    bottom:170px;
     width:58px;
     height:58px;
     border-radius:50%;
@@ -701,7 +701,7 @@ footer{
     font-size:20px;
     background:rgba(0,0,0,0.6);
     box-shadow:var(--shadow);
-    z-index:1000; /* above other floating buttons */
+    z-index:1000;
     border:none;
     cursor:pointer;
     transition:transform .12s ease, opacity .12s ease;
@@ -757,8 +757,8 @@ footer{
 
 .fade{
 
-    opacity:0;
-    transform:translateY(40px);
+    opacity:1;
+    transform:none;
     transition:.8s;
 
 }
@@ -827,7 +827,7 @@ font-size:32px;
 
 .hero-logo{
 
-font-size:3.25rem; /* tuned for medium screens */
+font-size:3.25rem;
 margin-bottom:25px;
 
 }
@@ -880,7 +880,7 @@ font-size:24px;
 
 .hero-logo{
 
-font-size:2rem; /* tuned for small screens */
+font-size:2rem;
 margin-bottom:20px;
 
 }
