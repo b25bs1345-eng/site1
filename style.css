@@ -299,16 +299,20 @@ header{
 
 }
 
+/* HERO TITLE - improved contrast and size */
 .hero-logo{
-
     font-family:'Playfair Display',serif;
-    font-size:48px;
-    font-weight:700;
-    color:#3E5A49;
-    margin-bottom:35px;
-    letter-spacing:1px;
-    text-shadow:0 2px 8px rgba(0,0,0,.3);
-
+    font-size:clamp(2.25rem, 6vw, 5.5rem); /* responsive, bigger */
+    font-weight:800;
+    color:#1f8f4c; /* a pleasant green - change hex if you prefer another tone */
+    margin-bottom:28px;
+    letter-spacing:0.02em;
+    text-shadow:
+      0 6px 20px rgba(0,0,0,0.55); /* strong shadow for readability */
+    background:linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.12));
+    padding:0.6rem 1.05rem;
+    border-radius:10px;
+    display:inline-block;
 }
 
 .hero h2{
@@ -682,6 +686,31 @@ footer{
    FLOATING BUTTONS
 ========================== */
 
+/* Back-to-top floating button (placed above the maroon call button) */
+.back-to-top{
+    position:fixed;
+    right:25px;
+    bottom:170px; /* above .call which is at bottom:100px */
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:20px;
+    background:rgba(0,0,0,0.6);
+    box-shadow:var(--shadow);
+    z-index:1000; /* above other floating buttons */
+    border:none;
+    cursor:pointer;
+    transition:transform .12s ease, opacity .12s ease;
+}
+.back-to-top[hidden]{
+    display:none;
+}
+.back-to-top:active{ transform:scale(.98); }
+
 .whatsapp,
 .call{
 
@@ -798,7 +827,7 @@ font-size:32px;
 
 .hero-logo{
 
-font-size:28px;
+font-size:3.25rem; /* tuned for medium screens */
 margin-bottom:25px;
 
 }
@@ -851,7 +880,7 @@ font-size:24px;
 
 .hero-logo{
 
-font-size:20px;
+font-size:2rem; /* tuned for small screens */
 margin-bottom:20px;
 
 }
