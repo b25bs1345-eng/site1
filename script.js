@@ -276,30 +276,78 @@ images.forEach(function (image) {
 });
 
 /* ==========================================================
-   PREVENT PAST DATE SELECTION
+   PREVENT PAST DATE SELECTION + CHECKOUT MIN/MAX
+   - Check-out min = check-in + 1 day
+   - Check-out max = check-in + 30 days
+   - Clamps checkout value if out of range
 ========================================================== */
 
 const checkInInput = document.getElementById("checkin");
 const checkOutInput = document.getElementById("checkout");
 
-if (checkInInput) {
+function formatISODate(d) {
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+}
 
-    const today = new Date().toISOString().split("T")[0];
+function addDays(dateStrOrDate, days) {
+    const d = (typeof dateStrOrDate === 'string') ? new Date(dateStrOrDate) : new Date(dateStrOrDate);
+    d.setDate(d.getDate() + days);
+    return d;
+}
 
-    checkInInput.min = today;
+if (checkInInput && checkOutInput) {
+    // Prevent past check-in (today is min)
+    const todayISO = new Date().toISOString().split('T')[0];
+    checkInInput.min = todayISO;
 
-    checkInInput.addEventListener("change", function () {
+    // Initialize values: if empty, set check-in = today, check-out = today + 1
+    if (!checkInInput.value) {
+        checkInInput.value = todayISO;
+    }
 
-        checkOutInput.min = this.value;
+    function updateCheckoutConstraints() {
+        if (!checkInInput.value) return;
 
-        if (checkOutInput.value < this.value) {
+        const minCo = addDays(checkInInput.value, 1);
+        const maxCo = addDays(checkInInput.value, 30);
 
-            checkOutInput.value = "";
+        checkOutInput.min = formatISODate(minCo);
+        checkOutInput.max = formatISODate(maxCo);
 
+        // if checkout not set, set to min
+        if (!checkOutInput.value) {
+            checkOutInput.value = formatISODate(minCo);
+            return;
         }
 
+        const currentCo = new Date(checkOutInput.value);
+
+        if (currentCo < minCo) {
+            checkOutInput.value = formatISODate(minCo);
+        } else if (currentCo > maxCo) {
+            checkOutInput.value = formatISODate(maxCo);
+        }
+    }
+
+    // Run initial update
+    updateCheckoutConstraints();
+
+    // Update constraints whenever checkin changes
+    checkInInput.addEventListener('change', function () {
+        const today = new Date().toISOString().split('T')[0];
+        if (this.value < today) {
+            this.value = today;
+        }
+        updateCheckoutConstraints();
     });
 
+    // Also guard against manual checkout changes
+    checkOutInput.addEventListener('change', function () {
+        updateCheckoutConstraints();
+    });
 }
 
 /* ==========================================================
@@ -317,6 +365,31 @@ buttons.forEach(function (button) {
     });
 
 });
+
+/* ==========================================================
+   BACK TO TOP BUTTON
+========================================================== */
+
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    const showAfter = 300; // px scrolled before showing
+
+    function checkScrollForTopBtn() {
+        if (window.scrollY > showAfter) {
+            backToTopBtn.hidden = false;
+        } else {
+            backToTopBtn.hidden = true;
+        }
+    }
+
+    // initial check
+    checkScrollForTopBtn();
+    window.addEventListener('scroll', checkScrollForTopBtn, { passive: true });
+
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 /* ==========================================================
    SIMPLE PARALLAX HERO
