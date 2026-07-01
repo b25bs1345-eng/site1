@@ -306,7 +306,7 @@ function addDays(dateStrOrDate, days) {
 
 if (checkInInput && checkOutInput) {
     // Prevent past check-in (today is min)
-    const todayISO = new Date().toISOString().split('T')[0];
+    const todayISO = formatISODate(new Date());
     checkInInput.min = todayISO;
 
     // Initialize values: if empty, set check-in = today, check-out = today + 1
