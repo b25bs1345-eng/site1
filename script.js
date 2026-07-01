@@ -344,12 +344,14 @@ if (checkInInput && checkOutInput) {
 
     // Update constraints whenever checkin changes
     checkInInput.addEventListener('change', function () {
-        const today = new Date().toISOString().split('T')[0];
-        if (this.value < today) {
-            this.value = today;
-        }
-        updateCheckoutConstraints();
-    });
+    const today = checkInInput.min;
+
+    if (this.value < today) {
+        this.value = today;
+    }
+
+    updateCheckoutConstraints();
+});
 
     // Also guard against manual checkout changes
     checkOutInput.addEventListener('change', function () {
