@@ -154,7 +154,7 @@
         <!-- Video Background -->
         <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
             <source src="assets/images/hero.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="assets/images/hero.jpg" type="image/jpeg">
         </video>
 
         <!-- Fallback Image -->
@@ -183,6 +183,11 @@
             <a href="#booking" class="btn">
                 Reserve Your Stay
             </a>
+
+            <!-- Unmute control (hidden until needed) -->
+            <button id="heroUnmute" class="hero-unmute" hidden aria-label="Enable site audio">
+                <i class="fas fa-volume-up"></i>
+            </button>
 
         </div>
 
@@ -216,6 +221,10 @@
                         <option value="3">3 Rooms</option>
                         <option value="4">4 Rooms</option>
                         <option value="5">5 Rooms</option>
+                        <option value="6">6 Rooms</option>
+                        <option value="7">7 Rooms</option>
+                        <option value="8">8 Rooms</option>
+                        <option value="9">9 Rooms</option>
                     </select>
                 </div>
 
@@ -226,6 +235,20 @@
                         <option value="2" selected>2 Adults</option>
                         <option value="3">3 Adults</option>
                         <option value="4">4 Adults</option>
+                        <option value="5">5 Adults</option>
+                        <option value="6">6 Adults</option>
+                        <option value="7">7 Adults</option>
+                        <option value="8">8 Adults</option>
+                        <option value="9">9 Adults</option>
+                        <option value="10">10 Adults</option>
+                        <option value="11">11 Adults</option>
+                        <option value="12">12 Adults</option>
+                        <option value="13">13 Adults</option>
+                        <option value="14">14 Adults</option>
+                        <option value="15">15 Adults</option>
+                        <option value="16">16 Adults</option>
+                        <option value="17">17 Adults</option>
+                        <option value="18">18 Adults</option>
                     </select>
                 </div>
 
@@ -236,6 +259,21 @@
                         <option value="1">1 Child</option>
                         <option value="2">2 Children</option>
                         <option value="3">3 Children</option>
+                        <option value="4">4 Children</option>
+                        <option value="5">5 Children</option>
+                        <option value="6">6 Children</option>
+                        <option value="7">7 Children</option>
+                        <option value="8">8 Children</option>
+                        <option value="9">9 Children</option>
+                        <option value="10">10 Children</option>
+                        <option value="11">11 Children</option>
+                        <option value="12">12 Children</option>
+                        <option value="13">13 Children</option>
+                        <option value="14">14 Children</option>
+                        <option value="15">15 Children</option>
+                        <option value="16">16 Children</option>
+                        <option value="17">17 Children</option>
+                        <option value="18">18 Children</option>
                     </select>
                 </div>
 
@@ -354,42 +392,59 @@
     </section>
 
     <!-- ===========================
-         AMENITIES SECTION
+         GALLERY
     ============================ -->
 
-    <section id="amenities">
+    <section id="gallery">
 
         <div class="container">
 
             <div class="section-title fade">
-                <h2>Premium Amenities</h2>
-                <p>Everything you need for a comfortable stay</p>
+                <h2>Gallery</h2>
+                <p>Experience the beauty of Udita Homestay</p>
             </div>
 
-            <div class="amenities">
+            <div class="gallery fade">
+                <img src="assets/images/gallery1.jpg" alt="Gallery image 1">
+                <img src="assets/images/gallery2.jpg" alt="Gallery image 2">
+                <img src="assets/images/gallery3.jpg" alt="Gallery image 3">
+                <img src="assets/images/gallery4.jpg" alt="Gallery image 4">
+                <img src="assets/images/gallery5.jpg" alt="Gallery image 5">
+                <img src="assets/images/gallery6.jpg" alt="Gallery image 6">
+            </div>
 
-                <div class="amenity fade">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Free Wi-Fi</h3>
-                    <p>High-speed internet throughout the property</p>
+        </div>
+
+    </section>
+
+    <!-- ===========================
+         TESTIMONIALS
+    ============================ -->
+
+    <section id="testimonials">
+
+        <div class="container">
+
+            <div class="section-title fade">
+                <h2>Guest Reviews</h2>
+                <p>What our guests say about us</p>
+            </div>
+
+            <div class="testimonials">
+
+                <div class="review fade">
+                    <p>"Great hospitality and value for money. The rooms are clean and comfortable. We had a wonderful stay!"</p>
+                    <p><strong>- Aman Singh</strong></p>
                 </div>
 
-                <div class="amenity fade">
-                    <i class="fas fa-snowflake"></i>
-                    <h3>Air Conditioning</h3>
-                    <p>Comfortable climate control in all rooms</p>
+                <div class="review fade">
+                    <p>"Best homestay in Santiniketan! Authentic food and warm hosts. Highly recommended!"</p>
+                    <p><strong>- Priya Sharma</strong></p>
                 </div>
 
-                <div class="amenity fade">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Home-Cooked Meals</h3>
-                    <p>Authentic Bengali cuisine prepared fresh daily</p>
-                </div>
-
-                <div class="amenity fade">
-                    <i class="fas fa-car"></i>
-                    <h3>Free Parking</h3>
-                    <p>Secure parking available for guests</p>
+                <div class="review fade">
+                    <p>"Perfect place for families. Radhika and her team were very cooperative and helpful."</p>
+                    <p><strong>- Rajesh Verma</strong></p>
                 </div>
 
             </div>
@@ -415,8 +470,8 @@
 
                 <div>
                     <h3>Contact Information</h3>
-                    <p><strong>Phone:</strong> +91-3369029448</p>
-                    <p><strong>Email:</strong> prayas.helpline@gmail.com</p>
+                    <p><strong>Phone:</strong> <a href="tel:+913369029448">+91-3369029448</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:prayas.helpline@gmail.com">prayas.helpline@gmail.com</a></p>
                     <p><strong>Location:</strong> Bolpur, Santiniketan, West Bengal 731204, India</p>
                     <p><strong>Check-in:</strong> 2:00 PM</p>
                     <p><strong>Check-out:</strong> 11:00 AM</p>
@@ -458,6 +513,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#rooms">Rooms</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
