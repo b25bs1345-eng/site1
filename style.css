@@ -334,6 +334,42 @@ header{
 
 }
 
+.hero-rating-badge {
+    display: inline-flex; /* Keeps the background wrapped tightly around the text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between the score, Google, and the rest of the text */
+    margin: 15px auto;
+    padding: 8px 16px;
+    
+    /* Decorative Badge Styling */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 50px; /* Gives it a smooth pill shape */
+    backdrop-filter: blur(5px); /* Blurs the background image behind the badge */
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+    
+    /* Typography and Layout */
+    font-size: clamp(12px, 3.2vw, 16px); /* Scales down on mobile to stay on one line */
+    white-space: nowrap; /* Forces everything to stay on one single line */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Make the text "Google" look more authentic */
+.google-text {
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    letter-spacing: -0.5px; /* Pulls the letters slightly closer together like the real logo */
+    background: #ffffff; /* White background just behind the word Google to make colors pop */
+    padding: 2px 6px;
+    border-radius: 12px;
+}
+
+.rating-score {
+    font-weight: bold;
+}
+
 /* ==========================
    BOOKING CARD
 ========================== */
