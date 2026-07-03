@@ -1,3 +1,31 @@
+# Allow Google Search
+User-agent: Googlebot
+Allow: /
+
+# Allow Google's AI usage
+User-agent: Google-Extended
+Allow: /
+
+# Allow Meta crawlers
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Block OpenAI
+User-agent: GPTBot
+Disallow: /
+
+# Block Anthropic
+User-agent: ClaudeBot
+Disallow: /
+
+# Block Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+# Default: allow everyone else
 User-agent: *
 Allow: /
 
