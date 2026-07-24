@@ -15,7 +15,7 @@ Allow: /
 
 # Block OpenAI
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 # Block Anthropic
 User-agent: ClaudeBot
