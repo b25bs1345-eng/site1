@@ -7,7 +7,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VT9ME9KDR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'G-9VT9ME9KDR');
@@ -17,13 +17,13 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17717721496"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
 
   gtag('config', 'AW-17717721496');
 </script>
     
-<!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1650608466044562'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1650608466044562&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
+<!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n[...]
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,10 @@
     <title>Udita Homestay Prayas | Best Boutique Homestay in Santiniketan Bolpur</title>
 
     <meta name="description"
-        content="Udita Homestay Prayas - Best boutique homestay in Santiniketan, Bolpur offering deluxe AC rooms, authentic Bengali hospitality, home-cooked meals. Cheap, affordable stay with Udita Homestay. Best Homestay in Shantiniketan. Udita Eco Homestay.">
+        content="Udita Homestay Prayas - Best boutique homestay in Santiniketan, Bolpur offering deluxe AC rooms, authentic Bengali hospitality, home-cooked meals. Cheap, affordable stay with Udit[...]">
 
     <meta name="keywords"
-        content="best hotel in Santiniketan, cheap hotel in Santiniketan, affordable homestay Santiniketan, Bolpur homestay, Udita Homestay, Prayas Kitchen, boutique stay Santiniketan, Bengali hospitality, Poush Mela, Dol Jatra.">
+        content="best hotel in Santiniketan, cheap hotel in Santiniketan, affordable homestay Santiniketan, Bolpur homestay, Udita Homestay, Prayas Kitchen, boutique stay Santiniketan, Bengali hos[...]">
 
     <meta name="author" content="Udita Homestay Prayas">
 
@@ -160,9 +160,29 @@
                aria-label="Book on Airbnb">
                 <i class="fab fa-airbnb"></i>
             </a>
+
+            <!-- NEW: Menu button placed visually at the right inside the header (absolute positioned) -->
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-haspopup="true" aria-controls="offcanvasMenu">
+                <span class="menu-icon" aria-hidden="true">☰</span>
+            </button>
+
         </nav>
 
     </header>
+
+    <!-- OFF-CANVAS MENU (hidden by default) -->
+    <div id="offcanvasMenu" class="offcanvas" aria-hidden="true" role="dialog" aria-label="Main Menu">
+        <div class="offcanvas-inner">
+            <button id="offcanvasClose" class="offcanvas-close" aria-label="Close menu">✕</button>
+            <nav class="offcanvas-nav">
+                <ul>
+                    <li><a href="/pages/about.html">About Shantiniketan</a></li>
+                    <li><a href="/pages/secret-credit.html">Secret Credit Program</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="offcanvasOverlay" class="offcanvas-overlay" hidden></div>
 
     <!-- ===========================
          HERO SECTION WITH VIDEO
@@ -356,9 +376,7 @@
 
     </section>
 
-    <!-- ===========================
-         ROOMS
-    ============================ -->
+    <!-- ... rest of file remains unchanged (rooms, amenities, gallery, explore, testimonials, contact, footer, floating buttons, scripts) ... -->
 
     <section id="rooms">
 
@@ -413,9 +431,7 @@
 
     </section>
 
-    <!-- ===========================
-         AMENITIES
-    ============================ -->
+    <!-- AMENITIES, GALLERY, EXPLORE, TESTIMONIALS, CONTACT, FOOTER unchanged -->
 
     <section id="amenities">
 
@@ -474,10 +490,6 @@
 
     </section>
 
-    <!-- ===========================
-         GALLERY
-    ============================ -->
-
     <section id="gallery">
 
         <div class="container">
@@ -501,10 +513,6 @@
         </div>
 
     </section>
-
-    <!-- ===========================
-         EXPLORE SANTINIKETAN
-    ============================ -->
 
     <section id="explore">
 
@@ -548,10 +556,6 @@
         </div>
 
     </section>
-
-    <!-- ===========================
-         TESTIMONIALS
-    ============================ -->
 
     <section id="testimonials">
 
@@ -598,10 +602,6 @@
         </div>
 
     </section>
-
-    <!-- ===========================
-         CONTACT
-    ============================ -->
 
     <section id="contact">
 
@@ -665,10 +665,6 @@
 
     </section>
 
-    <!-- ===========================
-         FOOTER
-    ============================ -->
-
     <footer>
 
         <div class="footer-grid">
@@ -715,11 +711,8 @@ Created by Siddhartha Rakshit<br>A student of IIT Jodhpur<br>(Contact Info: b25b
 
     </footer>
 
-    <!-- ===========================
-         FLOATING BUTTONS
-    ============================ -->
+    <!-- FLOATING BUTTONS -->
 
-    <!-- Back to top button (positioned above the maroon call button) -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top" hidden>
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -732,9 +725,7 @@ Created by Siddhartha Rakshit<br>A student of IIT Jodhpur<br>(Contact Info: b25b
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===========================
-         JAVASCRIPT
-    ============================ -->
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
