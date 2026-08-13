@@ -823,6 +823,10 @@ footer{
     }
 }
 
+.linkedin-badge-wrapper .LI-profile-badge {
+    transform: translateX(3px);
+}
+
 
 /* ==========================
    RESPONSIVE
