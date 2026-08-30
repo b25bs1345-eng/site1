@@ -238,9 +238,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="booking fade" id="booking">
 
         <form action="#" method="post" aria-label="Room booking form">
-            
-<style>#kbe-widget-69{all:initial;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}#kbe-widget-69.kbe-large{display:inline-flex;align-items:center;justify-content:center;background:#7e1c15;color:#fff;font-size:16px;font-weight:600;padding:14px 28px;border-radius:8px}</style>
-<a id="kbe-widget-69" class="kbe-root kbe-large" href="https://uditahomestay.keyio.ai" target="_self">BOOK NOW</a>
+
+            <div class="booking-grid">
+
+                <div>
+                    <label for="checkin">Check-In</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+
+                <div>
+                    <label for="checkout">Check-Out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+
+                <div>
+                    <label for="room-count">Rooms</label>
+                    <select id="room-count" name="room-count">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                        <option value="4">4 Rooms</option>
+                        <option value="5">5 Rooms</option>
+                        <option value="6">6 Rooms</option>
+                        <option value="7">7 Rooms</option>
+                        <option value="8">8 Rooms</option>
+                        <option value="9">9 Rooms</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="adults">Adults</label>
+                    <select id="adults" name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2" selected>2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                        <option value="5">5 Adults</option>
+                        <option value="6">6 Adults</option>
+                        <option value="7">7 Adults</option>
+                        <option value="8">8 Adults</option>
+                        <option value="9">9 Adults</option>
+                        <option value="10">10 Adults</option>
+                        <option value="11">11 Adults</option>
+                        <option value="12">12 Adults</option>
+                        <option value="13">13 Adults</option>
+                        <option value="14">14 Adults</option>
+                        <option value="15">15 Adults</option>
+                        <option value="16">16 Adults</option>
+                        <option value="17">17 Adults</option>
+                        <option value="18">18 Adults</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="children">Children</label>
+                    <select id="children" name="children">
+                        <option value="0" selected>0 Child</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                        <option value="4">4 Children</option>
+                        <option value="5">5 Children</option>
+                        <option value="6">6 Children</option>
+                        <option value="7">7 Children</option>
+                        <option value="8">8 Children</option>
+                        <option value="9">9 Children</option>
+                        <option value="10">10 Children</option>
+                        <option value="11">11 Children</option>
+                        <option value="12">12 Children</option>
+                        <option value="13">13 Children</option>
+                        <option value="14">14 Children</option>
+                        <option value="15">15 Children</option>
+                        <option value="16">16 Children</option>
+                        <option value="17">17 Children</option>
+                        <option value="18">18 Children</option>
+                    </select>
+                </div>
+
+                <button type="submit">Check Availability</button>
+
+            </div>
 
         </form>
 
