@@ -392,6 +392,13 @@ header{
 
 }
 
+.booking form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .booking-grid{
 
     display:grid;
