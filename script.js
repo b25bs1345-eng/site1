@@ -449,6 +449,33 @@ galleryImages.forEach(function (image) {
 });
 
 /* ==========================================================
+   BOOKING ENGINE
+========================================================== */
+
+(function () {
+  var BOOKING_URL = "https://uditahomestay.keyio.ai";
+  var OPEN_NEW_TAB = false;
+
+  window.KeyIOBooking = {
+    url: BOOKING_URL,
+    book: function (params) {
+      if (!params || !params.checkIn || !params.checkOut) {
+        console.error('[KeyIOBooking] checkIn and checkOut are required.');
+        return;
+      }
+      var qs = 'checkIn=' + encodeURIComponent(params.checkIn) +
+               '&checkOut=' + encodeURIComponent(params.checkOut) +
+               '&adults=' + (parseInt(params.adults, 10) || 1) +
+               '&children=' + (parseInt(params.children, 10) || 0) +
+               '&infants=' + (parseInt(params.infants, 10) || 0);
+      var target = BOOKING_URL + '?' + qs;
+      if (OPEN_NEW_TAB) { window.open(target, '_blank'); }
+      else { window.location.href = target; }
+    }
+  };
+})();
+
+/* ==========================================================
    EXTERNAL LINKS
 ========================================================== */
 
