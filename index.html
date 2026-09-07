@@ -338,34 +338,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          ROOMS
     ============================ -->
 
-    <section id="rooms">
+<section id="rooms">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-title fade">
-                <h2>Our Deluxe Rooms in Santiniketan</h2>
-                <p>Spacious, elegant and affordable AC rooms designed for your comfort</p>
-            </div>
+        <div class="section-title fade">
+            <h2>Our Deluxe Rooms in Santiniketan</h2>
+            <p>Spacious, elegant and affordable AC rooms designed for your comfort</p>
+        </div>
 
-            <div class="rooms">
+        <div class="rooms">
+
+            <a href="https://booking.prayas.online"
+               class="room-link"
+               target="_self">
 
                 <article class="room fade">
-                    <img src="assets/images/room1.jpg" alt="Deluxe AC Room at Udita Homestay">
+
+                    <img src="assets/images/room1.jpg"
+                         alt="Deluxe AC Room at Udita Homestay">
+
                     <div class="room-content">
+
                         <h3>Deluxe Double Bedroom</h3>
+
                         <p>
                             Comfortable King-size bed, attached modern bathroom with Geyser,
                             High-speed Wi-Fi, LED TV, Garden View, Balcony and highly secured
-                            designed for complete relaxation 
+                            designed for complete relaxation
                         </p>
+
                     </div>
+
                 </article>
 
-            </div>
+            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+<style>
+    .room-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .room-link .room {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .room-link:hover .room {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+</style>
 
     <!-- ===========================
          AMENITIES
