@@ -102,6 +102,48 @@
             transform:scale(1.03);
         }
 
+
+        .blog-image-link {
+            position:relative;
+            display:block;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+
+        .blog-image-link::after {
+            content:'\\f065';
+            position:absolute;
+            right:16px;
+            bottom:16px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:38px;
+            height:38px;
+            border-radius:50%;
+            background:rgba(36,50,42,.82);
+            color:#fff;
+            font-family:'Font Awesome 6 Free';
+            font-size:13px;
+            font-weight:900;
+            opacity:0;
+            transform:translateY(5px);
+            transition:opacity .25s ease, transform .25s ease;
+            backdrop-filter:blur(6px);
+        }
+
+        .blog-image-link:hover::after,
+        .blog-image-link:focus-visible::after {
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        .blog-image-link:focus-visible {
+            outline:3px solid rgba(216,179,106,.8);
+            outline-offset:-3px;
+        }
+
         .blog-feature-badge {
             position:absolute;
             top:22px;
@@ -445,9 +487,12 @@
             <article class="blog-feature">
                 <div class="blog-feature-media">
                     <span class="blog-feature-badge">Featured note</span>
-                    <img
-                        src="assets/images/blog-thali.jpg" alt="Indian thali with rice, curries, flatbread and dessert"
-                        loading="eager">
+                    <a class="blog-image-link" href="assets/images/blog-thali.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open image: Indian thali with rice, curries, flatbread and dessert">
+                        <img
+                            src="assets/images/blog-thali.jpg"
+                            alt="Indian thali with rice, curries, flatbread and dessert"
+                            loading="eager">
+                    </a>
                 </div>
 
                 <div class="blog-feature-copy">
@@ -487,7 +532,7 @@
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img src="assets/images/blog-santiniketan-garden.jpg" alt="Garden landscape in Santiniketan" loading="lazy">
+                        <a class="blog-image-link" href="assets/images/blog-santiniketan-garden.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open image: Garden landscape in Santiniketan"><img src="assets/images/blog-santiniketan-garden.jpg" alt="Garden landscape in Santiniketan" loading="lazy"></a>
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta"><span class="blog-category">Place</span><span>Santiniketan</span></div>
@@ -502,9 +547,9 @@
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img
-                            src="assets/images/blog-luchi-sandesh.jpg" alt="Colourful Indian sweets and snacks in a street-side sweet shop"
-                            loading="lazy">
+                        <a class="blog-image-link" href="assets/images/blog-luchi-sandesh.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open image: Colourful Indian sweets and snacks in a street-side sweet shop">
+                        <img src="assets/images/blog-luchi-sandesh.jpg" alt="Colourful Indian sweets and snacks in a street-side sweet shop" loading="lazy">
+                    </a>
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -523,9 +568,9 @@
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img
-                            src="assets/images/blog-sandesh.jpg" alt="Pistachio-topped Indian sweets arranged on white plates"
-                            loading="lazy">
+                        <a class="blog-image-link" href="assets/images/blog-sandesh.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open image: Pistachio-topped Indian sweets arranged on white plates">
+                        <img src="assets/images/blog-sandesh.jpg" alt="Pistachio-topped Indian sweets arranged on white plates" loading="lazy">
+                    </a>
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
@@ -544,9 +589,9 @@
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img
-                            src="assets/images/blog-chai.jpg" alt="Warm cup of chai with tea leaves and spices"
-                            loading="lazy">
+                        <a class="blog-image-link" href="assets/images/blog-chai.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open image: Warm cup of chai with tea leaves and spices">
+                        <img src="assets/images/blog-chai.jpg" alt="Warm cup of chai with tea leaves and spices" loading="lazy">
+                    </a>
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-meta">
