@@ -1,0 +1,44 @@
+name: Refresh blog image assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/blog-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download licensed blog photography
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+
+          curl -L --fail --retry 3 "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Bengali_Thali_(veg).jpg?width=1600" -o assets/images/blog-thali.jpg
+          curl -L --fail --retry 3 "https://commons.wikimedia.org/wiki/Special:FilePath/Popular_Bengali_dish_Luchi_and_vegetable_curry_alongside_Sandesh_(sweets)_in_West_Bengal,_India,_photo_taken_by_Yogabrata_Chakraborty,_on_March_7,_2023.jpg?width=1600" -o assets/images/blog-luchi-sandesh.jpg
+          curl -L --fail --retry 3 "https://commons.wikimedia.org/wiki/Special:FilePath/Sandesh_(confectionery),_popular_dessert_from_West_Bengal,_India,_photographed_by_Yogabrata_Chakraborty,_on_April_11,_2023.jpg?width=1600" -o assets/images/blog-sandesh.jpg
+          curl -L --fail --retry 3 "https://commons.wikimedia.org/wiki/Special:FilePath/Kulhadchai.jpg?width=1200" -o assets/images/blog-chai.jpg
+          curl -L --fail --retry 3 "https://commons.wikimedia.org/wiki/Special:FilePath/Santiniketan_Garden.jpg?width=1600" -o assets/images/blog-santiniketan-garden.jpg
+
+      - name: Commit local image assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/blog-*.jpg
+          if git diff --cached --quiet; then
+            echo "Blog images are already current."
+            exit 0
+          fi
+          git commit -m "Add local blog image assets"
+          git push
