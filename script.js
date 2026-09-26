@@ -17,6 +17,61 @@ const backToTopBtn = document.getElementById("backToTop");
 const hero = document.querySelector(".hero");
 
 /* ==========================================================
+   BLOGS NAVIGATION
+   Adds one unobtrusive menu item without changing the
+   existing social buttons or page layout.
+========================================================== */
+
+(function addBlogsNavigation() {
+    if (!header) return;
+
+    const nav = header.querySelector(".social-nav");
+    if (!nav || nav.querySelector(".blogs-nav-link")) return;
+
+    const link = document.createElement("a");
+    link.className = "blogs-nav-link";
+    link.href = "blogs.html";
+    link.innerHTML = '<i class="fas fa-book-open" aria-hidden="true"></i><span>Blogs</span>';
+    link.setAttribute("aria-label", "Read the Udita Homestay blog");
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .social-nav .blogs-nav-link {
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+            min-height:46px;
+            padding:0 18px;
+            border:1px solid rgba(140,90,60,.22);
+            border-radius:24px;
+            background:rgba(255,255,255,.92);
+            color:#3E5A49;
+            font-family:'Poppins',sans-serif;
+            font-size:14px;
+            font-weight:600;
+            letter-spacing:.01em;
+            box-shadow:0 4px 15px rgba(0,0,0,.06);
+            transition:transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+        }
+        .social-nav .blogs-nav-link:hover {
+            transform:translateY(-3px);
+            background:#8C5A3C;
+            color:#fff;
+            box-shadow:0 8px 24px rgba(0,0,0,.14);
+        }
+        @media(max-width:600px){
+            .social-nav { gap:10px; flex-wrap:wrap; }
+            .social-nav .blogs-nav-link { min-height:42px; padding:0 14px; font-size:13px; }
+            .social-nav .social-btn { width:44px; height:44px; font-size:18px; }
+        }
+    `;
+
+    document.head.appendChild(style);
+    nav.insertBefore(link, nav.firstChild);
+})();
+
+/* ==========================================================
    STICKY HEADER + ACTIVE NAVIGATION + BACK TO TOP
 ========================================================== */
 
