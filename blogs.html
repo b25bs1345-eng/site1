@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Udita Homestay Journal — stories, travel notes, local culture and thoughtful guides from Santiniketan and Bolpur.">
+    <meta name="description" content="The Udita Homestay Journal — food, travel, local culture and thoughtful guides from Santiniketan and Bolpur.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.prayas.online/blogs.html">
     <meta name="theme-color" content="#8C5A3C">
@@ -17,19 +17,20 @@
     <style>
         /* ======================================================
            UDITA HOMESTAY — BLOG JOURNAL
-           Page-specific styles only. Existing site CSS remains intact.
+           Page-specific styles. Existing home-page CSS is untouched.
         ====================================================== */
 
         .blog-page {
             min-height:100vh;
             padding-top:108px;
             background:
-                radial-gradient(circle at 10% 0%, rgba(216,179,106,.13), transparent 30%),
+                radial-gradient(circle at 8% 0%, rgba(216,179,106,.16), transparent 30%),
+                radial-gradient(circle at 96% 20%, rgba(62,90,73,.08), transparent 26%),
                 var(--bg);
         }
 
         .blog-hero {
-            padding:72px 8% 48px;
+            padding:68px 8% 44px;
             text-align:center;
         }
 
@@ -41,29 +42,31 @@
             padding:8px 15px;
             border:1px solid rgba(140,90,60,.18);
             border-radius:999px;
-            background:rgba(255,255,255,.72);
+            background:rgba(255,255,255,.78);
             color:var(--primary);
             font-size:12px;
             font-weight:700;
             letter-spacing:.14em;
             text-transform:uppercase;
+            box-shadow:0 8px 25px rgba(0,0,0,.04);
         }
 
         .blog-hero h1 {
-            max-width:900px;
+            max-width:980px;
             margin:0 auto;
             color:var(--secondary);
             font-family:'Playfair Display',serif;
-            font-size:clamp(2.8rem, 6vw, 5.2rem);
-            line-height:1.04;
+            font-size:clamp(2.8rem, 6vw, 5.4rem);
+            line-height:1.02;
+            letter-spacing:-.02em;
         }
 
         .blog-hero p {
-            max-width:690px;
+            max-width:720px;
             margin:22px auto 0;
             color:var(--light);
             font-size:17px;
-            line-height:1.8;
+            line-height:1.85;
         }
 
         .blog-shell {
@@ -73,40 +76,62 @@
 
         .blog-feature {
             display:grid;
-            grid-template-columns:1.05fr .95fr;
+            grid-template-columns:1.08fr .92fr;
             overflow:hidden;
             border:1px solid rgba(62,90,73,.08);
-            border-radius:28px;
+            border-radius:30px;
             background:#fff;
-            box-shadow:var(--shadow);
+            box-shadow:0 22px 55px rgba(0,0,0,.10);
         }
 
         .blog-feature-media {
-            min-height:420px;
+            position:relative;
+            min-height:500px;
             overflow:hidden;
+            background:#e9e1d7;
         }
 
         .blog-feature-media img {
             width:100%;
             height:100%;
             object-fit:cover;
+            transition:transform .8s ease;
+        }
+
+        .blog-feature:hover .blog-feature-media img {
+            transform:scale(1.03);
+        }
+
+        .blog-feature-badge {
+            position:absolute;
+            top:22px;
+            left:22px;
+            padding:8px 12px;
+            border-radius:999px;
+            background:rgba(36,50,42,.88);
+            color:#fff;
+            font-size:10px;
+            font-weight:700;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            backdrop-filter:blur(8px);
         }
 
         .blog-feature-copy {
             display:flex;
             flex-direction:column;
             justify-content:center;
-            padding:52px;
+            padding:54px;
         }
 
         .blog-meta {
             display:flex;
             align-items:center;
             flex-wrap:wrap;
-            gap:9px 14px;
+            gap:8px 12px;
             margin-bottom:18px;
             color:#7a7a7a;
-            font-size:12px;
+            font-size:11px;
             font-weight:600;
             letter-spacing:.06em;
             text-transform:uppercase;
@@ -123,14 +148,16 @@
         }
 
         .blog-feature h2 {
-            font-size:clamp(2rem, 4vw, 3.15rem);
-            line-height:1.12;
+            max-width:600px;
+            font-size:clamp(2.05rem, 4vw, 3.35rem);
+            line-height:1.08;
+            letter-spacing:-.015em;
         }
 
         .blog-feature p {
             margin:20px 0 28px;
             color:var(--light);
-            line-height:1.85;
+            line-height:1.9;
         }
 
         .blog-read {
@@ -156,16 +183,18 @@
             align-items:end;
             justify-content:space-between;
             gap:20px;
-            margin:76px 0 28px;
+            margin:78px 0 28px;
         }
 
         .blog-section-heading h2 {
             color:var(--secondary);
             font-family:'Playfair Display',serif;
-            font-size:38px;
+            font-size:40px;
+            line-height:1;
         }
 
         .blog-section-heading p {
+            margin-top:8px;
             color:var(--light);
             font-size:14px;
         }
@@ -179,8 +208,8 @@
         .blog-card {
             display:flex;
             flex-direction:column;
-            min-height:100%;
             overflow:hidden;
+            min-height:100%;
             border:1px solid rgba(62,90,73,.08);
             border-radius:22px;
             background:#fff;
@@ -190,23 +219,24 @@
 
         .blog-card:hover {
             transform:translateY(-7px);
-            box-shadow:var(--shadow);
+            box-shadow:0 22px 48px rgba(0,0,0,.11);
         }
 
         .blog-card-media {
-            height:210px;
+            height:235px;
             overflow:hidden;
+            background:#eee;
         }
 
         .blog-card-media img {
             width:100%;
             height:100%;
             object-fit:cover;
-            transition:transform .5s ease;
+            transition:transform .55s ease;
         }
 
         .blog-card:hover .blog-card-media img {
-            transform:scale(1.04);
+            transform:scale(1.05);
         }
 
         .blog-card-body {
@@ -219,7 +249,7 @@
         .blog-card h3 {
             margin:4px 0 12px;
             font-size:25px;
-            line-height:1.22;
+            line-height:1.18;
         }
 
         .blog-card p {
@@ -237,17 +267,14 @@
             position:relative;
         }
 
-        .blog-card-soon .blog-card-media img {
-            filter:saturate(.72);
-        }
-
         .coming-soon {
             position:absolute;
             top:18px;
             left:18px;
+            z-index:2;
             padding:7px 11px;
             border-radius:999px;
-            background:rgba(36,50,42,.88);
+            background:rgba(36,50,42,.9);
             color:#fff;
             font-size:10px;
             font-weight:700;
@@ -255,15 +282,28 @@
             text-transform:uppercase;
         }
 
+        .blog-image-credit {
+            margin-top:10px;
+            color:#999;
+            font-size:10px;
+            line-height:1.5;
+        }
+
+        .blog-image-credit a {
+            color:#888;
+            text-decoration:underline;
+            text-decoration-color:rgba(136,136,136,.35);
+        }
+
         .blog-note {
             display:flex;
             align-items:flex-start;
             gap:16px;
-            margin-top:52px;
-            padding:25px 28px;
+            margin-top:50px;
+            padding:24px 28px;
             border-left:4px solid var(--accent);
             border-radius:14px;
-            background:rgba(216,179,106,.10);
+            background:rgba(216,179,106,.11);
         }
 
         .blog-note i {
@@ -278,11 +318,28 @@
             line-height:1.8;
         }
 
+        .blog-source-strip {
+            display:flex;
+            justify-content:center;
+            margin-top:28px;
+            color:#8a8a8a;
+            font-size:11px;
+            text-align:center;
+        }
+
+        .blog-source-strip a {
+            color:var(--primary);
+            text-decoration:underline;
+            text-decoration-color:rgba(140,90,60,.3);
+        }
+
         .blog-cta {
-            margin-top:70px;
-            padding:48px 35px;
-            border-radius:26px;
-            background:linear-gradient(135deg, #24322A, #3E5A49);
+            margin-top:72px;
+            padding:52px 35px;
+            border-radius:28px;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(216,179,106,.17), transparent 25%),
+                linear-gradient(135deg, #24322A, #3E5A49);
             color:#fff;
             text-align:center;
             box-shadow:var(--shadow);
@@ -290,14 +347,14 @@
 
         .blog-cta h2 {
             font-family:'Playfair Display',serif;
-            font-size:36px;
+            font-size:38px;
         }
 
         .blog-cta p {
-            max-width:620px;
-            margin:12px auto 24px;
-            color:rgba(255,255,255,.78);
-            line-height:1.75;
+            max-width:640px;
+            margin:12px auto 26px;
+            color:rgba(255,255,255,.8);
+            line-height:1.8;
         }
 
         .blog-cta .btn {
@@ -306,7 +363,7 @@
         }
 
         .blog-footer-space {
-            height:10px;
+            height:8px;
         }
 
         .blog-nav-link {
@@ -318,40 +375,35 @@
             padding:0 18px;
             border:1px solid rgba(140,90,60,.22);
             border-radius:24px;
-            background:var(--primary);
-            color:#fff;
+            background:#fff;
+            color:var(--secondary);
             font-family:'Poppins',sans-serif;
             font-size:14px;
             font-weight:600;
-            box-shadow:0 4px 15px rgba(0,0,0,.08);
+            box-shadow:0 4px 15px rgba(0,0,0,.06);
         }
 
-        .blog-home-link {
-            color:var(--secondary);
-            background:#fff;
-        }
-
-        @media(max-width:900px){
+        @media(max-width:1000px){
             .blog-feature { grid-template-columns:1fr; }
-            .blog-feature-media { min-height:320px; }
+            .blog-feature-media { min-height:360px; }
             .blog-grid { grid-template-columns:1fr 1fr; }
-            .blog-feature-copy { padding:38px; }
+            .blog-feature-copy { padding:40px; }
         }
 
         @media(max-width:650px){
             .blog-page { padding-top:88px; }
-            .blog-hero { padding:52px 8% 35px; }
+            .blog-hero { padding:52px 8% 34px; }
             .blog-hero p { font-size:15px; }
             .blog-shell { width:84%; }
-            .blog-feature-media { min-height:245px; }
+            .blog-feature-media { min-height:250px; }
             .blog-feature-copy { padding:30px; }
-            .blog-section-heading { display:block; margin-top:55px; }
-            .blog-section-heading h2 { font-size:31px; }
-            .blog-section-heading p { margin-top:7px; }
+            .blog-feature h2 { font-size:2.25rem; }
+            .blog-section-heading { display:block; margin-top:56px; }
+            .blog-section-heading h2 { font-size:32px; }
             .blog-grid { grid-template-columns:1fr; }
-            .blog-card-media { height:225px; }
-            .blog-cta { padding:38px 25px; }
-            .blog-cta h2 { font-size:30px; }
+            .blog-card-media { height:230px; }
+            .blog-cta { padding:40px 24px; }
+            .blog-cta h2 { font-size:31px; }
             .blog-nav-link { min-height:42px; padding:0 14px; font-size:13px; }
         }
     </style>
@@ -360,14 +412,11 @@
 <body>
     <header id="header">
         <nav class="social-nav" aria-label="Primary navigation">
-            <a class="blog-nav-link blog-home-link" href="index.html">
+            <a class="blog-nav-link" href="index.html">
                 <i class="fas fa-house" aria-hidden="true"></i>
                 <span>Home</span>
             </a>
-            <a class="blog-nav-link" href="blogs.html" aria-current="page">
-                <i class="fas fa-book-open" aria-hidden="true"></i>
-                <span>Blogs</span>
-            </a>
+
             <a href="https://www.facebook.com/share/182A7BboWy/" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Visit our Facebook page">
                 <i class="fab fa-facebook-f"></i>
             </a>
@@ -382,86 +431,139 @@
 
     <main class="blog-page">
         <section class="blog-hero">
-            <div class="blog-kicker"><i class="fas fa-leaf"></i> The Udita Journal</div>
-            <h1>Stories from Santiniketan, thoughtfully told.</h1>
-            <p>Travel notes, local culture, seasonal ideas and the little details that make a stay around Bolpur and Santiniketan memorable.</p>
+            <div class="blog-kicker"><i class="fas fa-utensils"></i> The Udita Journal</div>
+            <h1>Stories, flavours & little joys from Santiniketan.</h1>
+            <p>Food notes, local culture, seasonal ideas and slow-travel inspiration — the things that make a stay around Bolpur worth remembering.</p>
         </section>
 
         <div class="blog-shell">
             <article class="blog-feature">
                 <div class="blog-feature-media">
-                    <img src="assets/images/explore.jpg" alt="Santiniketan landscape and cultural surroundings" loading="eager">
+                    <span class="blog-feature-badge">Featured note</span>
+                    <img
+                        src="https://images.unsplash.com/photo-1680993032090-1ef7ea9b51e5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1800"
+                        alt="Indian thali with rice, curries, flatbread and dessert"
+                        loading="eager">
                 </div>
+
                 <div class="blog-feature-copy">
                     <div class="blog-meta">
-                        <span class="blog-category">Santiniketan</span>
+                        <span class="blog-category">Food & Culture</span>
                         <span>26 September 2026</span>
                         <span>•</span>
-                        <span>5 min read</span>
+                        <span>4 min read</span>
                     </div>
-                    <h2>Why Santiniketan feels different: heritage, nature and a slower rhythm</h2>
-                    <p>Santiniketan was inscribed on the UNESCO World Heritage List in 2023. Its significance goes beyond individual buildings: the heritage property brings together landscape, architecture, art, education and living cultural traditions. That combination is part of what makes a visit here feel unlike an ordinary weekend getaway.</p>
-                    <a class="blog-read" href="https://whc.unesco.org/en/list/1375" target="_blank" rel="noopener noreferrer">
-                        Explore the heritage story <i class="fas fa-arrow-right"></i>
+
+                    <h2>A Bengali table is more than a meal — it is a way of welcoming you home.</h2>
+
+                    <p>
+                        Rice, dal, vegetables, bhaja, fish or meat, chutney and something sweet at the end:
+                        Bengali meals are built around variety, rhythm and the pleasure of eating slowly.
+                        That generous, home-style spirit is one of the nicest parts of travelling through Bengal.
+                    </p>
+
+                    <a class="blog-read" href="https://www.cntraveller.in/story/rolls-chop-cha-snails-mutton-ghugni-the-best-things-to-eat-in-shantiniketan/" target="_blank" rel="noopener noreferrer">
+                        Read our food inspiration <i class="fas fa-arrow-right"></i>
                     </a>
+
+                    <div class="blog-image-credit">
+                        Featured photograph by <a href="https://unsplash.com/photos/a-silver-plate-topped-with-rice-and-different-types-of-food-dncjnYtmWHo" target="_blank" rel="noopener noreferrer">Zoshua Colah on Unsplash</a>.
+                    </div>
                 </div>
             </article>
 
             <div class="blog-section-heading">
                 <div>
                     <h2>From our journal</h2>
-                    <p>More local stories and practical guides will be added here regularly.</p>
+                    <p>Fresh stories will be added here regularly.</p>
                 </div>
             </div>
 
             <div class="blog-grid">
-                <article class="blog-card">
+                <article class="blog-card blog-card-soon">
+                    <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img src="assets/images/gallery5.jpg" alt="Peaceful garden surroundings at Udita Homestay" loading="lazy">
+                        <img
+                            src="https://images.unsplash.com/photo-1750949135629-0345e050c353?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1400"
+                            alt="Colourful Indian sweets and snacks in a street-side sweet shop"
+                            loading="lazy">
                     </div>
                     <div class="blog-card-body">
-                        <div class="blog-meta"><span class="blog-category">Stay</span><span>Udita Homestay</span></div>
-                        <h3>A quieter way to experience Santiniketan</h3>
-                        <p>A closer look at the simple pleasures of slowing down: morning light, home-style food, open spaces and time to explore without rushing.</p>
+                        <div class="blog-meta">
+                            <span class="blog-category">Local flavours</span>
+                            <span>Bolpur</span>
+                        </div>
+                        <h3>Five little things to eat around Santiniketan</h3>
+                        <p>Ghugni, jhalmuri, chops, sweets and a cup of chai — a future guide to the small bites that make a wandering afternoon better.</p>
                         <span class="blog-read" aria-label="Article coming soon">Coming soon <i class="fas fa-hourglass-half"></i></span>
+                        <div class="blog-image-credit">
+                            Photograph by <a href="https://unsplash.com/photos/a-bustling-indian-street-food-stall-MJNq-3Q78P4" target="_blank" rel="noopener noreferrer">Vinit Patel on Unsplash</a>.
+                        </div>
                     </div>
                 </article>
 
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img src="assets/images/gallery4.jpg" alt="Dining and Bengali food at Udita Homestay" loading="lazy">
+                        <img
+                            src="https://images.unsplash.com/photo-1769576918185-f4f57316d78a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1400"
+                            alt="Pistachio-topped Indian sweets arranged on white plates"
+                            loading="lazy">
                     </div>
                     <div class="blog-card-body">
-                        <div class="blog-meta"><span class="blog-category">Food</span><span>Bengali table</span></div>
-                        <h3>What to taste when you visit Bolpur</h3>
-                        <p>A future guide to Bengali comfort food, seasonal flavours and the kind of meals that belong around a homestay table.</p>
-                        <span class="blog-read">Coming soon <i class="fas fa-hourglass-half"></i></span>
+                        <div class="blog-meta">
+                            <span class="blog-category">Sweet Bengal</span>
+                            <span>Food story</span>
+                        </div>
+                        <h3>Leave a little room for mishti</h3>
+                        <p>A sweet-toothed wander through Bengali dessert culture, from everyday treats to the celebratory plate that arrives at the end.</p>
+                        <span class="blog-read" aria-label="Article coming soon">Coming soon <i class="fas fa-hourglass-half"></i></span>
+                        <div class="blog-image-credit">
+                            Photograph by <a href="https://unsplash.com/photos/round-indian-sweets-topped-with-pistachios-on-plates-kOWqljqrEdM" target="_blank" rel="noopener noreferrer">Maakhanbhog Sweets on Unsplash</a>.
+                        </div>
                     </div>
                 </article>
 
                 <article class="blog-card blog-card-soon">
                     <div class="coming-soon">Coming soon</div>
                     <div class="blog-card-media">
-                        <img src="assets/images/gallery6.jpg" alt="Evening atmosphere around Santiniketan" loading="lazy">
+                        <img
+                            src="https://images.unsplash.com/photo-1762708156343-26472227daeb?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1400"
+                            alt="Warm cup of chai with tea leaves and spices"
+                            loading="lazy">
                     </div>
                     <div class="blog-card-body">
-                        <div class="blog-meta"><span class="blog-category">Local guide</span><span>Bolpur</span></div>
-                        <h3>A thoughtful weekend itinerary for Santiniketan</h3>
-                        <p>From heritage and art to the red-earth landscapes around Khoai, a future guide for making the most of a short stay.</p>
-                        <span class="blog-read">Coming soon <i class="fas fa-hourglass-half"></i></span>
+                        <div class="blog-meta">
+                            <span class="blog-category">Slow travel</span>
+                            <span>Santiniketan</span>
+                        </div>
+                        <h3>The art of taking tea slowly</h3>
+                        <p>A gentle note on chai, quiet mornings and why the best Santiniketan memories often arrive when you stop trying to fit everything into one day.</p>
+                        <span class="blog-read" aria-label="Article coming soon">Coming soon <i class="fas fa-hourglass-half"></i></span>
+                        <div class="blog-image-credit">
+                            Photograph by <a href="https://unsplash.com/photos/cup-of-chai-tea-with-spices-and-tea-leaves-P5wfT_V3OmE" target="_blank" rel="noopener noreferrer">Nikita Khowala on Unsplash</a>.
+                        </div>
                     </div>
                 </article>
             </div>
 
             <div class="blog-note">
                 <i class="fas fa-pen-nib" aria-hidden="true"></i>
-                <p><strong>For future updates:</strong> new articles can be added as simple blog cards in this page, while the existing home page, booking flow, gallery and contact sections remain untouched.</p>
+                <p>
+                    <strong>New stories are on the way.</strong>
+                    We’ll keep this journal fresh with local food, Santiniketan guides, seasonal ideas,
+                    culture and practical notes for guests planning a stay.
+                </p>
+            </div>
+
+            <div class="blog-source-strip">
+                Editorial food inspiration: <a href="https://www.cntraveller.in/story/rolls-chop-cha-snails-mutton-ghugni-the-best-things-to-eat-in-shantiniketan/" target="_blank" rel="noopener noreferrer">&nbsp;Condé Nast Traveller India</a>
+                &nbsp;·&nbsp; Photography shown under the <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">&nbsp;Unsplash License</a>.
             </div>
 
             <section class="blog-cta">
                 <h2>Planning your Santiniketan stay?</h2>
-                <p>Come back to the journal for new local guides, then head to the booking page when you are ready to plan your visit.</p>
+                <p>Come back to the journal for new local stories, then book whenever you’re ready for the real thing.</p>
                 <a class="btn" href="https://booking.prayas.online">Book Your Stay</a>
             </section>
         </div>
