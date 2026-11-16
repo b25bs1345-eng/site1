@@ -197,3 +197,128 @@ footer { background:linear-gradient(135deg,#203c30,#315a45); }
  .fade { opacity:1!important; transform:none!important; }
  .hero-video { display:none; }
 }
+
+
+/* MOBILE REFINEMENT: compact navigation, calm hero, and clear tap targets. */
+@media (max-width:560px) {
+  header { padding:8px 4%; }
+  .social-nav {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:7px 8px;
+  }
+  .social-nav::after {
+    content:"";
+    flex:0 0 100%;
+    order:2;
+    height:0;
+  }
+  .site-brand {
+    order:0;
+    flex:1 1 auto;
+    min-width:0;
+    margin-right:auto;
+    gap:8px;
+  }
+  .site-brand-mark { width:36px; height:36px; font-size:21px; }
+  .site-brand-copy { font-size:15px; white-space:nowrap; }
+  .site-brand-copy small { font-size:8px; }
+  .site-booking-link {
+    order:1;
+    flex:0 0 auto;
+    margin-left:auto;
+    min-height:38px;
+    padding:0 11px;
+    gap:6px;
+    font-size:10px;
+    white-space:nowrap;
+  }
+  .social-nav .blog-nav-link {
+    order:3;
+    min-height:30px;
+    margin:0;
+    padding:0 11px;
+    gap:6px;
+    font-size:11px;
+  }
+  .social-nav .social-btn {
+    order:3;
+    width:30px;
+    height:30px;
+    margin:0;
+    font-size:12px;
+  }
+
+  .hero {
+    min-height:0;
+    height:auto;
+    margin-top:100px;
+  }
+  .hero-video { display:none !important; }
+  .hero-fallback { object-position:center 48%; }
+  .hero-content {
+    width:90%;
+    padding:36px 0 40px;
+  }
+  .hero-eyebrow {
+    margin-bottom:13px;
+    padding:7px 11px;
+    font-size:9px;
+    letter-spacing:.11em;
+  }
+  .hero-logo {
+    font-size:clamp(2.15rem,8.5vw,2.55rem);
+    line-height:1.06;
+    margin:0 0 12px;
+  }
+  .hero h2 {
+    max-width:100%;
+    margin:8px 0 12px;
+    font-size:clamp(1.12rem,4.5vw,1.35rem);
+    line-height:1.42;
+  }
+  .hero-rating-badge {
+    width:fit-content;
+    max-width:100%;
+    margin:10px 0;
+    padding:10px 14px;
+    font-size:12px;
+    line-height:1.35;
+  }
+  .hero p {
+    margin:12px 0 18px;
+    font-size:15px;
+    line-height:1.65;
+  }
+  .hero-actions {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+  }
+  #kbe-widget-69.kbe-large,
+  .hero-secondary-link {
+    box-sizing:border-box !important;
+    width:260px !important;
+    max-width:calc(100% - 58px) !important;
+    min-height:48px !important;
+    justify-content:center;
+  }
+  .whatsapp {
+    right:16px;
+    bottom:18px;
+    width:46px;
+    height:46px;
+    font-size:20px;
+  }
+  .call { display:none; }
+}
+
+@media (max-width:390px) {
+  .site-brand { gap:6px; }
+  .site-brand-mark { width:32px; height:32px; font-size:19px; }
+  .site-brand-copy { font-size:13px; }
+  .site-brand-copy small { display:none; }
+  .site-booking-link { min-height:36px; padding:0 9px; font-size:9px; }
+}
