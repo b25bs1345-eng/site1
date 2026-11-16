@@ -64,10 +64,10 @@ header {
 .hero p { max-width:650px; margin:18px 0 24px; color:rgba(255,255,255,.94); font-size:clamp(15px,1.5vw,18px); line-height:1.8; }
 .hero-actions { display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:13px; }
 #kbe-widget-69.kbe-large {
- min-width:190px; min-height:55px; padding:14px 28px; border:1px solid rgba(255,255,255,.2); border-radius:999px;
- background:var(--joy-coral); color:#fff; font-size:13px; letter-spacing:.12em; box-shadow:0 10px 25px rgba(0,0,0,.2);
+ min-width:190px !important; min-height:55px !important; padding:14px 28px !important; border:1px solid rgba(255,255,255,.2) !important; border-radius:999px !important;
+ background:var(--joy-coral) !important; color:#fff !important; font-size:13px !important; letter-spacing:.12em !important; box-shadow:0 10px 25px rgba(0,0,0,.2) !important;
 }
-#kbe-widget-69.kbe-large:hover { background:#984832; transform:translateY(-3px); }
+#kbe-widget-69.kbe-large:hover { background:#984832 !important; transform:translateY(-3px); }
 .hero-secondary-link { display:inline-flex; min-height:54px; align-items:center; gap:10px; padding:12px 21px; border:1px solid rgba(255,255,255,.65); border-radius:999px; color:#fff; font-size:13px; font-weight:700; }
 .hero-secondary-link:hover { background:rgba(255,255,255,.14); color:#fff; transform:translateY(-2px); }
 
