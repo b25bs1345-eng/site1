@@ -964,3 +964,185 @@ font-size:16px;
 }
 
 }
+
+
+/* ==========================
+   HEADER + MOBILE REFINEMENT
+   Keeps the original hero video and page content intact.
+========================== */
+
+/* Give the existing header links deliberate styling after the recovery. */
+.site-brand{
+    display:flex;
+    align-items:center;
+    color:#254b3d;
+    text-decoration:none;
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    font-weight:700;
+    line-height:1.1;
+    white-space:nowrap;
+}
+.site-brand-copy{display:flex; flex-direction:column; gap:4px;}
+.site-brand-copy small{
+    color:#68766d;
+    font-family:Arial,sans-serif;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+.blog-nav-link,
+.site-booking-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:44px;
+    padding:0 16px;
+    border-radius:24px;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+}
+.blog-nav-link{
+    color:#254b3d;
+    background:#edf2e9;
+}
+.site-booking-link{
+    color:#fff;
+    background:var(--primary);
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+.blog-nav-link:hover,
+.site-booking-link:hover{transform:translateY(-1px);}
+
+@media(max-width:768px){
+    header{
+        box-sizing:border-box;
+        width:100%;
+        padding:8px 12px;
+    }
+    .social-nav{
+        display:grid;
+        width:100%;
+        max-width:560px;
+        margin:0 auto;
+        grid-template-columns:minmax(0,1fr) repeat(4,auto);
+        grid-template-areas:
+            "brand brand brand brand booking"
+            "blog facebook youtube airbnb .";
+        align-items:center;
+        justify-items:center;
+        gap:8px 10px;
+    }
+    .site-brand{grid-area:brand; justify-self:start; min-width:0; font-size:16px;}
+    .site-brand-copy small{font-size:8px; letter-spacing:.13em;}
+    .site-booking-link{
+        grid-area:booking;
+        min-height:38px;
+        padding:0 12px;
+        gap:6px;
+        font-size:11px;
+    }
+    .blog-nav-link{
+        grid-area:blog;
+        min-height:34px;
+        padding:0 11px;
+        gap:6px;
+        font-size:12px;
+    }
+    .social-btn{
+        width:34px;
+        height:34px;
+        font-size:15px;
+        margin:0;
+    }
+    .social-btn.facebook{grid-area:facebook;}
+    .social-btn.youtube{grid-area:youtube;}
+    .social-btn.airbnb{grid-area:airbnb;}
+
+    /* Retain the original video. Make its content fit a phone viewport. */
+    .hero{
+        box-sizing:border-box;
+        height:auto;
+        min-height:calc(100svh - 104px);
+        margin-top:104px;
+        padding:34px 18px 42px;
+    }
+    .hero-content{
+        width:100%;
+        max-width:560px;
+        margin:0 auto;
+        padding:0;
+    }
+    .hero-logo{
+        max-width:100%;
+        box-sizing:border-box;
+        margin:0 auto 14px;
+        padding:10px 14px;
+        font-size:clamp(2rem,8.5vw,2.8rem);
+        line-height:1.08;
+        overflow-wrap:anywhere;
+    }
+    .hero h2{
+        margin:10px auto 14px;
+        font-size:clamp(1.25rem,5.4vw,1.8rem);
+        line-height:1.35;
+    }
+    .hero-rating-badge{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:6px 8px;
+        max-width:100%;
+        margin:12px auto;
+        padding:8px 12px;
+        white-space:normal;
+        font-size:12px;
+        line-height:1.35;
+    }
+    .hero p{
+        max-width:520px;
+        margin:16px auto;
+        font-size:15px;
+        line-height:1.6;
+    }
+    #kbe-widget-69.kbe-large{
+        box-sizing:border-box;
+        min-width:0;
+        width:min(100%,320px);
+        min-height:50px;
+        padding:14px 20px;
+        font-size:15px;
+    }
+    .whatsapp,.call{
+        right:14px;
+        width:48px;
+        height:48px;
+        font-size:20px;
+    }
+    .whatsapp{bottom:16px;}
+    .call{bottom:74px;}
+    .back-to-top{
+        right:14px;
+        bottom:132px;
+        width:42px;
+        height:42px;
+        font-size:16px;
+    }
+    section{scroll-margin-top:108px;}
+}
+
+@media(max-width:380px){
+    header{padding:7px 9px;}
+    .social-nav{column-gap:7px;}
+    .site-brand{font-size:14px;}
+    .site-brand-copy small{font-size:7px;}
+    .site-booking-link{padding:0 9px; font-size:10px;}
+    .blog-nav-link{padding:0 9px; font-size:11px;}
+    .hero{padding:28px 14px 38px;}
+    .hero-logo{font-size:2rem;}
+}
