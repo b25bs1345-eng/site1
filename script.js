@@ -125,7 +125,7 @@ if (backToTopBtn) {
 ========================================================== */
 
 (function () {
-    const BOOKING_URL = "https://uditahomestay.keyio.ai";
+    const BOOKING_URL = "https://booking.prayas.online";
 
     window.KeyIOBooking = {
         url: BOOKING_URL,
